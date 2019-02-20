@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddContactComponent implements OnInit {
 
+  showCompany: boolean = false;
+  formInfo: object = {};
+
+  toggleCompany(e) {
+    this.showCompany = !this.showCompany;
+  }
+
+  submitForm(e) {
+    this.formInfo = e;
+  }
+
   constructor() { }
 
   ngOnInit() {

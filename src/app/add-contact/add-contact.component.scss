@@ -1,3 +1,56 @@
+@import '../../assets/scss/vars.scss';
+
 .add-contact {
     margin-top: 60px;
+    h1 {
+        margin-bottom: 30px;
+    }
+    .form-part {
+        width: 50%;
+    }
+    .splitted-inputs {
+        display: flex;
+        width: 500px;
+            .zip {
+                margin-left: 10px;
+                width: 140px;
+                flex-grow: 0;
+            }
+            &.left {
+                justify-content: flex-start;
+                align-content: center;
+            }
+            span {
+                padding: 14px 10px 8px 10px;
+            }
+    }
+    input {
+        padding: 7px 10px 8px 10px;
+        border: solid 1px $lightGray;
+        border-radius: 3px;
+        margin: 5px 0;
+        font-size: 0.9em;
+        color: $darkGray;
+        box-sizing: border-box;
+        width: 500px;
+        height: 36px;
+        &[type=checkbox] {
+            width: auto;
+        }
+        &[type=submit] {
+            background-color: #0095ff;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: solid 1px #0080da;
+            cursor: pointer;
+        }
+    }
+    label {
+        margin: 8px 0 2px;
+        display: block;
+        &:first-child {
+            margin: 0;
+        }
+    }
 }

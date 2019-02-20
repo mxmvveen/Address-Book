@@ -2,4 +2,44 @@
   <h1>
     Add contact
   </h1>
+
+  <form #contactForm="ngForm" (ngSubmit)="submitForm(contactForm.value)">
+    <div class="form-part">
+      <label for="name">
+        Name:
+      </label>
+      <input type="text" ngModel name="name" id="name" class="form-input" placeholder="Name">
+      <label for="address">
+        Address:
+      </label>
+      <div class="splitted-inputs">
+        <input type="text" ngModel name="street" id="address" class="form-input" placeholder="Street">
+        <input type="text" ngModel name="zipcode" id="zip" class="form-input zip" placeholder="Zip code">
+      </div>
+      <label for="city">
+        City:
+      </label>
+      <input type="text" ngModel name="city" id="city" placeholder="City">
+      <label for="Phone number">
+        Phone number:
+      </label>
+      <input type="text" ngModel name="phonenumber" id="Phone number" placeholder="Phone number">
+      <div class="splitted-inputs left">
+        <input type="checkbox" (change)="toggleCompany()"> <span>Show company</span>
+      </div>
+      <div *ngIf="showCompany">
+        <label for="company">
+          Company:
+        </label>
+        <input type="text" ngModel name="company" id="company" placeholder="Company">
+        <label for="function">
+          Function:
+        </label>
+        <input type="text" ngModel name="function" id="function" placeholder="Function">
+      </div>
+      <input type="submit">
+    </div>
+  </form>
 </div>
+
+{{ formInfo | json }}
